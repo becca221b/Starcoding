@@ -33,5 +33,28 @@ de una habitacion y calcular la superficie.
 5) Pedirle al usuario que ingrese su nombre y devolverle
 el nombre todo en minusculas
 */
-const nombre=prompt("Ingrese su nombre")
-alert(nombre.toLowerCase())
+//const nombre=prompt("Ingrese su nombre")
+//alert(nombre.toLowerCase())
+
+/*
+6) Pedirle al usuario que ingrese su apellido y devolverle
+el apellido todo en mayuscula.
+*/
+/*
+6) Pedirle al usuario que ingrese su apellido y devolverle
+el apellido todo en mayuscula.
+*/
+//const apellido= prompt("Ingrese su apellido")
+//alert(`Tu apellido en minúsculas es `+ apellido.toUpperCase())
+
+/*
+7) Pedirle al usuario el nombre, el apellido y la 
+edad. Mostrar el siguiente mensaje:
+Nombre: Juan
+Apellido: Perez
+Edad: 20
+*/
+//const nombre=prompt("Ingrese su nombre")
+//const apellido=prompt("Ingrese su apellido")
+//const edad=prompt("Ingrese su edad")
+//alert("Nombre: "+nombre+"\nApellido: "+apellido+"\nEdad: "+edad)
