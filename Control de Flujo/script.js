@@ -58,3 +58,13 @@ nos diga si es par o impar. */
   mensaje de exito informando al usuario que se completo el registro. (OTRA PISTA: Para ver como validar la longitud de un string, pueden ver el siguiente
     enlace: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length )
 */
+const wishToRegister= confirm("Bienvenido al Sitio. Presione OK para registrarse")
+
+if(wishToRegister){
+	const user= prompt("Ingrese su usuario").toLowerCase()
+ 	if(user.length>3){
+  	console.log(user)
+  }else{
+  	console.log("wrong")
+  }
+}
