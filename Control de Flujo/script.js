@@ -62,9 +62,14 @@ const wishToRegister= confirm("Bienvenido al Sitio. Presione OK para registrarse
 
 if(wishToRegister){
 	const user= prompt("Ingrese su usuario").toLowerCase()
- 	if(user.length>3){
-  	console.log(user)
+ 	if(user.length>=3){
+  	const pass= prompt("Ingrese una contraseña")
+    if(pass.length>=6){
+      pass
+    }else{
+      alert("La contraseña debe tener un mínimo de 6 caracteres")
+    }
   }else{
-  	console.log("wrong")
+  	alert("Usuario incorrecto, debe ingresar más de tres caracteres")
   }
 }
