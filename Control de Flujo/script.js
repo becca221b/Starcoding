@@ -79,3 +79,11 @@ do{
      	}
 }while(user.length<3 || password.length<6)
 alert("Completó el registro correctamente")
+
+	/*2) LOGIN
+  Partiendo de la base del punto anterior, en caso de que se complete el registro, vamos a mostrarle un mensaje al usuario preguntandole
+  si desea iniciar sesion. En caso de que el usuario haga click en aceptar, vamos a pedirle que ingrese su nombre de usuario y luego su contrasena
+  Si alguno de los datos ingresados no coinciden con los informados al momento del registro, le vamos a mostrar un mensaje de error al usuario.
+  Caso contrario, le mostraremos un mensaje que diga que el login fue exitoso. Recordar el tema de normalizar los inputs en caso de que sea necesario,
+  para poder hacer la comparacion contra los valores almacenados.
+  */
