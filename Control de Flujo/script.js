@@ -59,17 +59,23 @@ nos diga si es par o impar. */
     enlace: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length )
 */
 const wishToRegister= confirm("Bienvenido al Sitio. Presione OK para registrarse")
-
-if(wishToRegister){
-	const user= prompt("Ingrese su usuario").toLowerCase()
- 	if(user.length>=3){
-  	const pass= prompt("Ingrese una contraseña")
-    if(pass.length>=6){
-      pass
-    }else{
-      alert("La contraseña debe tener un mínimo de 6 caracteres")
-    }
-  }else{
-  	alert("Usuario incorrecto, debe ingresar más de tres caracteres")
-  }
-}
+let user
+let password
+do{
+	if(wishToRegister){
+		user= prompt("Ingrese su usuario").toLowerCase()
+ 		if(user.length>=3){
+  			do{
+          			password= prompt("Ingrese una contraseña")
+            			if(password.length<6){
+            				alert("La contraseña debe tener un mínimo de 6 caracteres")		
+            			}
+    			}while(password.length<6)
+      			}else{
+  				alert("Usuario incorrecto, debe ingresar más de tres caracteres")
+        		}
+     	}else{
+     		alert("Ok, te esperamos cuando quieras")
+     	}
+}while(user.length<3 || password.length<6)
+alert("Completó el registro correctamente")
