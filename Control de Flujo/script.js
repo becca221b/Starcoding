@@ -71,9 +71,9 @@ do{
             				alert("La contraseña debe tener un mínimo de 6 caracteres")		
             			}
     			}while(password.length<6)
-      			}else{
-  				alert("Usuario incorrecto, debe ingresar más de tres caracteres")
-        		}
+      		}else{
+  			alert("Usuario incorrecto, debe ingresar más de tres caracteres")
+        	}
      	}else{
      		alert("Ok, te esperamos cuando quieras")
      	}
