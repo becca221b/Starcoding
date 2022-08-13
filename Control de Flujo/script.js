@@ -65,18 +65,18 @@ do{
 	if(wishToRegister){
 		user= prompt("Ingrese su usuario").toLowerCase()
  		if(user.length>=3){
-  			do{
-          			password= prompt("Ingrese una contraseña")
-            			if(password.length<6){
-            				alert("La contraseña debe tener un mínimo de 6 caracteres")		
-            			}
-    			}while(password.length<6)
-      		}else{
+  		do{
+       	password= prompt("Ingrese una contraseña")
+        if(password.length<6){
+         	alert("La contraseña debe tener un mínimo de 6 caracteres")		
+        }
+    	}while(password.length<6)
+  	}else{
   			alert("Usuario incorrecto, debe ingresar más de tres caracteres")
-        	}
-     	}else{
-     		alert("Ok, te esperamos cuando quieras")
-     	}
+    }
+  }else{
+  	alert("Ok, te esperamos cuando quieras")
+  }
 }while(user.length<3 || password.length<6)
 alert("Completó el registro correctamente")
 
@@ -87,3 +87,24 @@ alert("Completó el registro correctamente")
   Caso contrario, le mostraremos un mensaje que diga que el login fue exitoso. Recordar el tema de normalizar los inputs en caso de que sea necesario,
   para poder hacer la comparacion contra los valores almacenados.
   */
+const wishToLogin= confirm("¿Desea iniciar sesión?")
+let userRegistered
+let passRegistered
+if(wishToLogin){
+  do{
+    userRegistered= prompt("Ingrese su nombre de usuario").toLowerCase()
+    if(userRegistered===user){
+      do{
+        passRegistered= prompt("Ingrese su contraseña")
+        if(passRegistered!=password){
+          alert("La contraseña es incorrecta")
+        }
+      }while(passRegistered!=password)
+    }else{
+    alert("El nombre de usuario es incorrecto")
+    }
+  }while(userRegistered!=user || passRegistered!=password)
+  alert("El login fue exitoso")  
+}else{
+  alert("Sesión no iniciada, te esperamos próximamente")
+}
