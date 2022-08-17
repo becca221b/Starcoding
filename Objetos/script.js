@@ -18,6 +18,18 @@ mostrar el siguiente mensaje:
  Tenis
 PARA ESTA ACTIVIDAD, USAR LO VISTO RESPECTO DE CLASES Y OBJETOS
 */
+class Deportes{
+	constructor(nombre,tipo){
+  	this.nombre = nombre;
+    this.tipo = tipo;
+  }
+  mostrarTipo(){
+    	console.log(this. nombre+ " es un deporte "+this.tipo)
+	}      
+}
+
+const voley = new Deportes("voley","por equipos")
+voley.mostrarTipo()
 
 /*2) Andrea y Martin deciden hacer un picnic al aire libre.
 Andrea propone llevar una bolsa con 2 cervezas, 2 sandwiches y 1 bolsa
