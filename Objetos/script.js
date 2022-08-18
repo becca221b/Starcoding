@@ -28,8 +28,20 @@ class Deportes{
 	}      
 }
 
+class DeporteDeEquipo extends Deportes{
+	constructor(nombre,cantidad){
+  super(nombre)
+  this.cantidad= cantidad;
+  }
+  jugadores(){
+  	console.log(`Para jugar al ${this.nombre} necesitas ${this.cantidad} jugadores por equipo`)
+  }
+}
+
 const voley = new Deportes("voley","por equipos")
 voley.mostrarTipo()
+const handball = new DeporteDeEquipo("handball",7)
+handball.jugadores()
 
 /*2) Andrea y Martin deciden hacer un picnic al aire libre.
 Andrea propone llevar una bolsa con 2 cervezas, 2 sandwiches y 1 bolsa
