@@ -58,3 +58,22 @@ Realizar el cambio correspondiente para que la bolsa de Martin
 tenga el total de los productos del picnic.
 c) Calcular el total de productos que llevaron al picnic
 */
+const BolsaAndrea={
+	cerveza: 2,
+  sandwich: 2,
+  papasFritas: 1
+}
+
+const BolsaMartin = {
+	torta: 1,
+  gaseosa: 1,
+  galletitas: 1
+}
+function verProducto(bolsa){
+	console.log(Object.keys(bolsa))
+}
+
+//verProducto(BolsaMartin)
+
+Object.assign(BolsaMartin,BolsaAndrea)
+console.log(BolsaMartin)
