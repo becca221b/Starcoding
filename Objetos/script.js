@@ -76,4 +76,9 @@ function verProducto(bolsa){
 //verProducto(BolsaMartin)
 
 Object.assign(BolsaMartin,BolsaAndrea)
-console.log(BolsaMartin)
+verProducto(BolsaMartin)
+
+const productos= Object.values(BolsaMartin)
+let total=0
+productos.forEach(function(cantidad){total+=cantidad})
+console.log("El total de productos son "+total)
