@@ -50,14 +50,8 @@ y 1 paquete de galletitas dulces.
 CREAR UN OBJETO QUE REPRESENTE CADA UNA DE LAS BOLSAS,
 DONDE CADA PRODUCTO TENGA LA CANTIDAD QUE LLEVO CADA UNO.
 REALIZAR LAS SIGUIENTES TAREAS:
-a) Mostrar por consola los productos que llevo cada uno
-(solo el nombre del producto)
-b) En el camino al picnic, la bolsa de Andrea se rompio, 
-por lo que tuvieron que poner todo en la bolsa de Martin.
-Realizar el cambio correspondiente para que la bolsa de Martin
-tenga el total de los productos del picnic.
-c) Calcular el total de productos que llevaron al picnic
 */
+
 const BolsaAndrea={
 	cerveza: 2,
   sandwich: 2,
@@ -69,14 +63,26 @@ const BolsaMartin = {
   gaseosa: 1,
   galletitas: 1
 }
+
+/*a) Mostrar por consola los productos que llevo cada uno
+(solo el nombre del producto)*/
+
 function verProducto(bolsa){
 	console.log(Object.keys(bolsa))
 }
+verProducto(BolsaMartin)
+verProducto(BolsaAndrea)
 
-//verProducto(BolsaMartin)
+/*b) En el camino al picnic, la bolsa de Andrea se rompio, 
+por lo que tuvieron que poner todo en la bolsa de Martin.
+Realizar el cambio correspondiente para que la bolsa de Martin
+tenga el total de los productos del picnic.*/
+
 
 Object.assign(BolsaMartin,BolsaAndrea)
-verProducto(BolsaMartin)
+//verProducto(BolsaMartin)
+
+//c) Calcular el total de productos que llevaron al picnic
 
 const productos= Object.values(BolsaMartin)
 let total=0
