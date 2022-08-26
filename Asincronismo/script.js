@@ -55,3 +55,10 @@ setTimeout(()=>console.log("Juan"),0)
 console.log("Mario")
 setTimeout(()=>console.log("Martin"),0)
 */
+//2) Utilizando setTimeout, crear una funcion que
+// actue como un temporizador, haciendo una cuenta
+// regresiva desde el numero de segundos que se pase
+// como argumentos hasta llegar a 0. Para ese ejercicio
+// no se puede utilizar ningun tipo de loop (for, while, etc)
+//PISTA: Para resolver el ejerciio, pueden investigar un
+// poco sobre funciones recursivas.
