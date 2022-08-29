@@ -62,7 +62,7 @@ setTimeout(()=>console.log("Martin"),0)
 // no se puede utilizar ningun tipo de loop (for, while, etc)
 //PISTA: Para resolver el ejerciio, pueden investigar un
 // poco sobre funciones recursivas.
-
+/*
 function temporizador(segundos){
 	setTimeout (()=>{
 		if(segundos<0){
@@ -73,3 +73,19 @@ function temporizador(segundos){
 	},1000)
 }
 temporizador(4)
+*/
+
+//3) Utilizando la API de GITHUB (https://api.github.com)
+//realizar las siguientes tareas
+
+// a) Obtener una lista de los repositorios publicos
+// (Documentacion de la API: https://docs.github.com/es/rest/reference/repos#list-public-repositories)
+// b) Generar una funcion que a partir de la respuesta
+// del punto anterior, retorne un array de los nombres
+// de usuario de los owners de los repositorios listados
+//c) Tomar de la respuesta al primer respositorio, y
+// listar todos los repositorios del owner.
+// PISTA: Para ver el endpoint al cual deberas pegarle
+// para traer los repositorios del owner, deberas
+// inspeccionar la informacion que recibes dentro del
+// primer request.
