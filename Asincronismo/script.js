@@ -62,3 +62,14 @@ setTimeout(()=>console.log("Martin"),0)
 // no se puede utilizar ningun tipo de loop (for, while, etc)
 //PISTA: Para resolver el ejerciio, pueden investigar un
 // poco sobre funciones recursivas.
+
+function temporizador(segundos){
+	setTimeout (()=>{
+		if(segundos<0){
+			return
+		}
+		console.log(segundos)
+		temporizador(segundos-1)
+	},1000)
+}
+temporizador(4)
