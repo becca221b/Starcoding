@@ -113,19 +113,11 @@ const getOwnersName= async()=>{
 getOwnersName()
 
 const firstOwnerRepos= async()=>{
-    /*
-    const repos= await getPublicRepo()
-    const firstRepo= repos[0]
-    const reposEndPoint= firstRepo.owner.repos_url
-    const reposResponse= await fetch(reposEndPoint)
-    const jsonReposResponse= await reposResponse.json()
-    console.log(jsonReposResponse)
-    console.log(reposEndPoint)
-    */
-    const ownerNames= getOwnersName()
+    
+    const ownerNames= await getOwnersName()
     const firstOwner= await fetch(`https://api.github.com/users/${ownerNames[0]}/repos`)
     const jsonfirstOwner= await firstOwner.json()
     console.log(jsonfirstOwner)
-    
+   
 }
 firstOwnerRepos()
