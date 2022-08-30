@@ -89,3 +89,43 @@ temporizador(4)
 // para traer los repositorios del owner, deberas
 // inspeccionar la informacion que recibes dentro del
 // primer request.
+//const baseUrl="https://api.github.com"
+
+const getPublicRepo= async()=>{
+    try{
+        const response= await fetch('https://api.github.com/repositories')
+        const jsonResponse=await response.json()
+        //console.log(jsonResponse)
+        return jsonResponse
+    }catch(error){
+        console.log(error)
+    }
+}
+getPublicRepo()
+
+const getOwnersName= async()=>{
+    const repos= await getPublicRepo()
+    const names=repos.map(repositories=>repositories.owner.login)
+    //console.log(names)
+    //console.log(repos)
+    return names
+}
+getOwnersName()
+
+const firstOwnerRepos= async()=>{
+    /*
+    const repos= await getPublicRepo()
+    const firstRepo= repos[0]
+    const reposEndPoint= firstRepo.owner.repos_url
+    const reposResponse= await fetch(reposEndPoint)
+    const jsonReposResponse= await reposResponse.json()
+    console.log(jsonReposResponse)
+    console.log(reposEndPoint)
+    */
+    const ownerNames= getOwnersName()
+    const firstOwner= await fetch(`https://api.github.com/users/${ownerNames[0]}/repos`)
+    const jsonfirstOwner= await firstOwner.json()
+    console.log(jsonfirstOwner)
+    
+}
+firstOwnerRepos()
