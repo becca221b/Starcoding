@@ -18,3 +18,7 @@ console.log(username)
 
 const repos= document.querySelector("#repos")
 console.log(repos)
+
+//5)querySelectorAll
+const usernames= document.querySelectorAll(".username")
+console.log(usernames)
