@@ -37,6 +37,36 @@ avatar.src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrCXYdTj9qW1YH
 //Incorporar html dentro de JS
 const list= document.querySelector("#repos-list")
 list.innerHTML= '<li>Un Repo</li> <br> <li>Otro Repo</li>'
-
+/*
 //console.log(list.outerHTML)
 //console.log(list.innerHTML)
+*/
+//Modificar estilos
+
+//className
+/*
+container.className="background-black"
+console.log(container.className)
+*/
+
+//classList
+
+//container.classList.add("background-black")
+//console.log(container.classList)
+//container.classList.remove("background-black")
+
+//Toggle
+const switchTheme= ()=>{
+    const container= document.querySelector(".container")
+    const textNodes=document.querySelectorAll(".text")
+    const avatar=document.querySelector("#avatar")
+    console.log(container.classList)
+    
+    container.classList.toggle("background-black")
+    textNodes.forEach((element)=>element.classList.toggle("white-text"))
+    if(container.classList.contains("background-black")){
+        avatar.style.border="2px solid white"
+    }
+}
+switchTheme()
+
