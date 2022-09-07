@@ -70,3 +70,22 @@ const switchTheme= ()=>{
 }
 switchTheme()
 
+//ELIMINAR UN NODO
+const repos= document.querySelector("#repos")
+repos.remove()
+
+//CREAR UN NODO
+const reposNode= document.createElement("h2")
+reposNode.innerText="Repos"
+//appendChild (añade al final)
+/*
+const parentAside= document.querySelector("aside")
+parentAside.appendChild(reposNode)
+*/
+const reposList= document.querySelector("#repos-list")
+reposList.before(reposNode)
+//reposList.after(reposNode)
+reposNode.classList.add("text","white-text")
+
+//switchTheme()
+//switchTheme()
