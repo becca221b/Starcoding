@@ -89,3 +89,35 @@ reposNode.classList.add("text","white-text")
 
 //switchTheme()
 //switchTheme()
+//EJERCICIO
+//Utilizando el listado de
+// repositorios que nos da la API de GITHUB (https://api.github.com)
+// tomar el primer repositorio del listado y
+// realizar las siguientes tareas:
+
+// 1) Modificar el texto 'Nombre' por el nombre de usuario
+// 2) Agregar el avatar del usuario
+// 3) Insertar un listado de links a sus 5 primeros
+// repositorios.
+const getPublicRepo= async()=>{
+    try{
+        const response= await fetch('https://api.github.com/repositories')
+        const jsonResponse=await response.json()
+        //console.log(jsonResponse)
+        return jsonResponse
+    }catch(error){
+        console.log(error)
+    }
+}
+getPublicRepo()
+
+const getFirstOwnerName= async()=>{
+    const repos= await getPublicRepo()
+    const names=repos.map(repositories=>repositories.owner.login)
+    const firstOwner=names[0]
+    return firstOwner
+}
+getFirstOwnerName()
+
+const nombre= document.querySelector(".username")
+nombre.textContent= firstOwner
