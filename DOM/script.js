@@ -62,7 +62,7 @@ const switchTheme= ()=>{
     const container= document.querySelector(".container")
     const textNodes=document.querySelectorAll(".text")
     const avatar=document.querySelector("#avatar")
-    console.log(container.classList)
+    //console.log(container.classList)
     
     container.classList.toggle("background-black")
     textNodes.forEach((element)=>element.classList.toggle("white-text"))
@@ -122,7 +122,15 @@ const getFirstOwnerName= async()=>{
     //console.log(firstOwner)
     return firstOwner
 }
-
+const firstOwnerRepos= async()=>{
+    
+    const ownerNames= await getFirstOwnerName()
+    const firstRepos= await fetch(`https://api.github.com/users/${firstOwner}/repos`)
+    const jsonfirstRepos= await firstRepos.json()
+    return jsonfirstRepos
+    //console.log(jsonfirstOwner)
+   
+}
 const modifiedName= async()=>{
 		const name= await getFirstOwnerName()
     const nombre= document.querySelector(".username")
@@ -144,14 +152,16 @@ const modifiedAvatar= async()=>{
   avatarProfile.src= firstAvatar
 }
 
+
 const getFiveRepos= async()=>{
-    const repos= await getPublicRepo()
-    const allUserRepos=repos.map(repositories=>repositories.owner.repos_url)
+    const repos= await firstOwnerRepos()
+    //console.log(repos)
+    const firstUserRepos=repos.map(repositories=>repositories.html_url)
     for(let i=0;i<5;i++){
     	const liList= document.createElement("li")
         const parentAside= document.querySelector("ul")
         parentAside.appendChild(liList)
-  		liList.innerText=(allUserRepos[i])
+  		liList.innerText=(firstUserRepos[i])
     }
 }
 
