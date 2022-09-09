@@ -35,8 +35,10 @@ avatar.src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrCXYdTj9qW1YH
 //console.log(avatar)
 
 //Incorporar html dentro de JS
+/*
 const list= document.querySelector("#repos-list")
 list.innerHTML= '<li>Un Repo</li> <br> <li>Otro Repo</li>'
+*/
 /*
 //console.log(list.outerHTML)
 //console.log(list.innerHTML)
@@ -71,22 +73,25 @@ const switchTheme= ()=>{
 switchTheme()
 
 //ELIMINAR UN NODO
-const repos= document.querySelector("#repos")
-repos.remove()
+//const repos= document.querySelector("#repos")
+//repos.remove()
 
 //CREAR UN NODO
+/*
 const reposNode= document.createElement("h2")
 reposNode.innerText="Repos"
+*/
 //appendChild (añade al final)
 /*
 const parentAside= document.querySelector("aside")
 parentAside.appendChild(reposNode)
 */
+/*
 const reposList= document.querySelector("#repos-list")
 reposList.before(reposNode)
 //reposList.after(reposNode)
 reposNode.classList.add("text","white-text")
-
+*/
 //switchTheme()
 //switchTheme()
 //EJERCICIO
@@ -103,7 +108,7 @@ const getPublicRepo= async()=>{
     try{
         const response= await fetch('https://api.github.com/repositories')
         const jsonResponse=await response.json()
-        console.log(jsonResponse)
+        //console.log(jsonResponse)
         return jsonResponse
     }catch(error){
         console.log(error)
@@ -142,12 +147,11 @@ const modifiedAvatar= async()=>{
 const getFiveRepos= async()=>{
     const repos= await getPublicRepo()
     const allUserRepos=repos.map(repositories=>repositories.owner.repos_url)
-   	//console.log(allUserRepos)
     for(let i=0;i<5;i++){
-    	const reposList= document.createElement("li")
-  		reposList.innerText=(allUserRepos[i])
-  		const parentAside= document.querySelector("aside")
-  		parentAside.appendChild(reposList)
+    	const liList= document.createElement("li")
+        const parentAside= document.querySelector("ul")
+        parentAside.appendChild(liList)
+  		liList.innerText=(allUserRepos[i])
     }
 }
 
