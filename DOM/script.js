@@ -103,21 +103,55 @@ const getPublicRepo= async()=>{
     try{
         const response= await fetch('https://api.github.com/repositories')
         const jsonResponse=await response.json()
-        //console.log(jsonResponse)
+        console.log(jsonResponse)
         return jsonResponse
     }catch(error){
         console.log(error)
     }
 }
-getPublicRepo()
 
 const getFirstOwnerName= async()=>{
     const repos= await getPublicRepo()
     const names=repos.map(repositories=>repositories.owner.login)
-    const firstOwner=names[0]
+    firstOwner=names[0]
+    //console.log(firstOwner)
     return firstOwner
 }
-getFirstOwnerName()
 
-const nombre= document.querySelector(".username")
-nombre.textContent= firstOwner
+const modifiedName= async()=>{
+		const name= await getFirstOwnerName()
+    const nombre= document.querySelector(".username")
+		nombre.textContent= firstOwner
+}
+
+const getAvatar= async()=>{
+    const repos= await getPublicRepo()
+    const avatar=repos.map(repositories=>repositories.owner.avatar_url)
+    firstAvatar=avatar[0]
+    //console.log(firstAvatar)
+    return firstAvatar
+  
+}
+
+const modifiedAvatar= async()=>{
+	const photoAvatar= await getAvatar()
+  const avatarProfile= document.querySelector("#avatar")
+  avatarProfile.src= firstAvatar
+}
+
+const getFiveRepos= async()=>{
+    const repos= await getPublicRepo()
+    const allUserRepos=repos.map(repositories=>repositories.owner.repos_url)
+   	//console.log(allUserRepos)
+    for(let i=0;i<5;i++){
+    	const reposList= document.createElement("li")
+  		reposList.innerText=(allUserRepos[i])
+  		const parentAside= document.querySelector("aside")
+  		parentAside.appendChild(reposList)
+    }
+}
+
+
+modifiedName()
+modifiedAvatar()
+getFiveRepos()
