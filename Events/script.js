@@ -12,7 +12,9 @@ const changeColor=(e)=>{
 	color= e.target.id
   console.log(color)
   const bloque= document.querySelector(".painterBlock")
-	bloque.classList.add(color)
+	bloque.className= 'painterBlock ${color}'
+  const parrafoColor= document.querySelector("h3")
+	parrafoColor.textContent="El color seleccionado es "+color
 }
 
 const paintSquare=(e)=>{
@@ -27,4 +29,5 @@ squareColors.forEach(cuadricula=>cuadricula.addEventListener('click',changeColor
 
 const blocks= document.querySelectorAll(".painterBlock")
 blocks.forEach(cuadritos=>cuadritos.addEventListener('click',paintSquare))
+
 
