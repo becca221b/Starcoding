@@ -11,8 +11,6 @@ let color;
 const changeColor=(e)=>{
 	color= e.target.id
   console.log(color)
-  const bloque= document.querySelector(".painterBlock")
-	bloque.className= 'painterBlock ${color}'
   const parrafoColor= document.querySelector("h3")
 	parrafoColor.textContent="El color seleccionado es "+color
 }
@@ -20,8 +18,8 @@ const changeColor=(e)=>{
 const paintSquare=(e)=>{
 	const selectedBlock=e.target.id
   const numDeBloque= document.getElementById(selectedBlock)
- 	numDeBloque.classList.add(color)
-  //console.log(numDeBloque)
+ 	numDeBloque.className= "painterBlock "+color
+  console.log(numDeBloque)
 }
 
 const squareColors= document.querySelectorAll(".color")
