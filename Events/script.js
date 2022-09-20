@@ -10,7 +10,7 @@ let color;
 
 const changeColor=(e)=>{
 	color= e.target.id
-  console.log(color)
+  //console.log(color)
   const parrafoColor= document.querySelector("h3")
 	parrafoColor.textContent="El color seleccionado es "+color
 }
@@ -19,7 +19,12 @@ const paintSquare=(e)=>{
 	const selectedBlock=e.target.id
   const numDeBloque= document.getElementById(selectedBlock)
  	numDeBloque.className= "painterBlock "+color
-  console.log(numDeBloque)
+  //console.log(numDeBloque)
+}
+
+const paintSquareOnMove=(e)=>{
+	if(e.buttons!==1)return
+	paintSquare(e)
 }
 
 const squareColors= document.querySelectorAll(".color")
@@ -27,5 +32,7 @@ squareColors.forEach(cuadricula=>cuadricula.addEventListener('click',changeColor
 
 const blocks= document.querySelectorAll(".painterBlock")
 blocks.forEach(cuadritos=>cuadritos.addEventListener('click',paintSquare))
+
+blocks.forEach(cuadritos=>cuadritos.addEventListener('mousemove',paintSquareOnMove))
 
 
