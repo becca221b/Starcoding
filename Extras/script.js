@@ -81,3 +81,33 @@ const updatedData={
 const mergedObject={...person1,...updatedData}
 console.log(mergedObject)
 
+/*
+const getTwoNumber=()=>2
+console.log(getTwoNumber()+3)
+*/
+//Inmutabilidad
+/*
+const addMember= (currentMembers,newMember)=>{
+  const newMemberList=[...currentMembers,newMember]
+  //console.log([...currentMembers])
+  return newMemberList
+}
+console.log(addMember(names,"Jessica"))
+console.log(names)
+*/
+//Funciones Puras
+/*
+const getRandomNumber=()=>Math.random()
+const sum=(a,b)=>a+b+getRandomNumber()
+console.log(sum(2,3))
+console.log(sum(2,3))
+console.log(sum(2,3))
+*/
+//High Orders Functions
+const logResult=(result)=> console.log(result)
+const alertResult=(result)=> alert(result)
+
+const sum=(a,b,callback)=> (callback(a+b))
+
+sum(1,3,logResult)
+sum(2,3,alertResult)
