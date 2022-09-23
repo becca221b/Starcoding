@@ -1,5 +1,6 @@
 //Destructuring
 const names= ["Andres","Julio","Federico"]
+const names2= ["Rebeca","Camila","Ceci"]
 
 const person1={
 	firstName:"Julio",
