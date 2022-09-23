@@ -51,6 +51,32 @@ console.log(groupedNames)
 console.log(names)
 */
 //En Funciones
-const logValues=(value)=>(console.log(value))
-logValues("hola")
+/*
+const logValues=(value1,...args)=>{
+  console.log("soy ",value1)
+  args.forEach(values=>console.log(values))
+}
+logValues("Rebeca","chau","nos vemos",,"en","disney")
+*/
+//En Objetos
+//1)Copiar Objetos
+/*
+const copiedPerson={...person1}
+copiedPerson.city="Buenos Aires"
+console.log(copiedPerson)
+console.log(person1)
+*/
+//2)Mergear objetos (vs. object.assign)
+/*
+const mergedObject= {...person1, city:"Córdoba"}
+console.log(mergedObject)
+console.log(person1)
+*/
+const updatedData={
+  job: "programador",
+  city:"Pilar",
+  age:30
+}
+const mergedObject={...person1,...updatedData}
+console.log(mergedObject)
 
