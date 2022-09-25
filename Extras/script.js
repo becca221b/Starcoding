@@ -72,7 +72,7 @@ console.log(person1)
 const mergedObject= {...person1, city:"Córdoba"}
 console.log(mergedObject)
 console.log(person1)
-*/
+
 const updatedData={
   job: "programador",
   city:"Pilar",
@@ -80,7 +80,7 @@ const updatedData={
 }
 const mergedObject={...person1,...updatedData}
 console.log(mergedObject)
-
+*/
 /*
 const getTwoNumber=()=>2
 console.log(getTwoNumber()+3)
@@ -104,6 +104,7 @@ console.log(sum(2,3))
 console.log(sum(2,3))
 */
 //High Orders Functions
+/*
 const logResult=(result)=> console.log(result)
 const alertResult=(result)=> alert(result)
 
@@ -111,3 +112,9 @@ const sum=(a,b,callback)=> (callback(a+b))
 
 sum(1,3,logResult)
 sum(2,3,alertResult)
+*/
+
+const dayjs = require('dayjs')
+//import dayjs from 'dayjs' // ES 2015
+const currentDay= dayjs().format("DD-MM-YYYY")
+console.log('La fecha actual es '+currentDay)
