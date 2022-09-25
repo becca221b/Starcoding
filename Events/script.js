@@ -10,16 +10,14 @@ let color;
 
 const changeColor=(e)=>{
 	color= e.target.id
-  //console.log(color)
-  const parrafoColor= document.querySelector("h3")
+   	const parrafoColor= document.querySelector("h3")
 	parrafoColor.textContent="El color seleccionado es "+color
 }
 
 const paintSquare=(e)=>{
 	const selectedBlock=e.target.id
-  const numDeBloque= document.getElementById(selectedBlock)
+  	const numDeBloque= document.getElementById(selectedBlock)
  	numDeBloque.className= "painterBlock "+color
-  //console.log(numDeBloque)
 }
 
 const paintSquareOnMove=(e)=>{
@@ -27,12 +25,17 @@ const paintSquareOnMove=(e)=>{
 	paintSquare(e)
 }
 
+const resetColors=()=>{
+	blocks.forEach(blockis=>blockis.className= "painterBlock white")
+}
+
 const squareColors= document.querySelectorAll(".color")
 squareColors.forEach(cuadricula=>cuadricula.addEventListener('click',changeColor))
 
-const blocks= document.querySelectorAll(".painterBlock")
+let blocks= document.querySelectorAll(".painterBlock")
 blocks.forEach(cuadritos=>cuadritos.addEventListener('click',paintSquare))
 
 blocks.forEach(cuadritos=>cuadritos.addEventListener('mousemove',paintSquareOnMove))
 
-
+const botonReset= document.querySelector("#reset-btn")
+botonReset.addEventListener('click',resetColors)
