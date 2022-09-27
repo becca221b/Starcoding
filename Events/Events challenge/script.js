@@ -5,7 +5,7 @@ imagen (puede ser algun cambio en la forma, un blur,
 animacion, etc). NO SE PUEDE USAR EL SELECTOR 
 :hover de CSS
 2) Agregar un evento al boton shuffle, de forma tal que
-cuando se haha click en el mismo, se actualice el perfil con
+cuando se haga click en el mismo, se actualice el perfil con
 informacion de un usuario random selecionado de la lista
 de usuarios que provee el endpoint de Github.
 Pista, para crear la logica de seleccion random, pueden
@@ -84,7 +84,20 @@ const getFiveRepos= async()=>{
       liList.href=(firstUserRepos[i])
     }
 }
+//////////////////////SHOW RANDOM PROFILE - CHALLENGE
+const getRandomOwnerName= async()=>{
+    const repos= await getPublicRepo()
+    const names=repos.map(repositories=>repositories.owner.login)
+    randomNumber=getRandomInt(100)
+    randomOwner=names[0]
+    //console.log(firstOwner)
+    return firstOwner
+}
 
+const getRandomProfile=()=>{
+
+}
+////////////////////////
 modifiedName()
 modifiedAvatar()
 getFiveRepos()
@@ -104,3 +117,6 @@ const removeTransition=()=>{
 //console.log(image)
 image.addEventListener("mouseover",applyTransition)
 image.addEventListener('mouseout',removeTransition)
+
+const botonSchuffle= document.querySelector("#schuffle-btn")
+botonSchuffle.addEventListener('click',getRandomProfile)
