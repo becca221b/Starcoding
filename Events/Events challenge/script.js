@@ -85,17 +85,23 @@ const getFiveRepos= async()=>{
     }
 }
 //////////////////////SHOW RANDOM PROFILE - CHALLENGE
+const getRandomInt=(max)=>{
+    return Math.floor(Math.random()*max)
+}
 const getRandomOwnerName= async()=>{
     const repos= await getPublicRepo()
     const names=repos.map(repositories=>repositories.owner.login)
-    randomNumber=getRandomInt(100)
-    randomOwner=names[0]
-    //console.log(firstOwner)
-    return firstOwner
+    let randomNumber=getRandomInt(100)
+    randomOwner=names[randomNumber]
+    console.log(randomOwner)
+    return randomOwner
 }
 
-const getRandomProfile=()=>{
-
+const randomOwnerRepos= async()=>{
+    const ownerNames= await getRandomOwnerName()
+    const randomRepos= await fetch(`https://api.github.com/users/${randomOwner}/repos`)
+    const jsonRandomRepos= await RandomRepos.json()
+    return jsonRandomRepos   
 }
 ////////////////////////
 modifiedName()
@@ -119,4 +125,4 @@ image.addEventListener("mouseover",applyTransition)
 image.addEventListener('mouseout',removeTransition)
 
 const botonSchuffle= document.querySelector("#schuffle-btn")
-botonSchuffle.addEventListener('click',getRandomProfile)
+botonSchuffle.addEventListener('click',getRandomOwnerName)
