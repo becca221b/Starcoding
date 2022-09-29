@@ -100,7 +100,7 @@ const getRandomOwnerName= async()=>{
 const randomOwnerRepos= async()=>{
     const ownerNames= await getRandomOwnerName()
     const randomRepos= await fetch(`https://api.github.com/users/${randomOwner}/repos`)
-    const jsonRandomRepos= await RandomRepos.json()
+    const jsonRandomRepos= await randomRepos.json()
     return jsonRandomRepos   
 }
 ////////////////////////
